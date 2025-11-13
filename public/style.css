@@ -1,0 +1,158 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: #f5f5f5;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    border-radius: 4px 4px 0 0;
+}
+
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+.tab button.active {
+    background-color: #007cba;
+    color: white;
+}
+
+.tabcontent {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.checkbox {
+    width: auto;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+}
+
+.form-check label {
+    margin-bottom: 0;
+    margin-left: 5px;
+}
+
+button {
+    background: #007cba;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+button:hover {
+    background: #005a87;
+}
+
+button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.logs {
+    background: #1e1e1e;
+    color: #00ff00;
+    padding: 15px;
+    border-radius: 4px;
+    height: 300px;
+    overflow-y: scroll;
+    margin-top: 20px;
+    font-family: monospace;
+    font-size: 12px;
+}
+
+.session-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.session-running {
+    border-left: 4px solid #28a745;
+}
+
+.session-stopped {
+    border-left: 4px solid #dc3545;
+}
+
+.session-completed {
+    border-left: 4px solid #007cba;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.status-running {
+    background: #28a745;
+    color: white;
+}
+
+.status-stopped {
+    background: #dc3545;
+    color: white;
+}
+
+.status-completed {
+    background: #007cba;
+    color: white;
+      }
