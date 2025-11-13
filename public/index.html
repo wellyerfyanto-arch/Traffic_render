@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organic Traffic Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🌐 Organic Traffic Generator</h1>
+        
+        <div class="tab">
+            <button class="tablinks active" onclick="openTab(event, 'Manual')">Manual Session</button>
+            <button class="tablinks" onclick="openTab(event, 'AutoLoop')">Auto-Loop</button>
+            <button class="tablinks" onclick="openTab(event, 'Monitoring')">Monitoring</button>
+        </div>
+
+        <div id="Manual" class="tabcontent" style="display: block;">
+            <form id="sessionForm">
+                <div class="form-group">
+                    <label for="targetUrl">Target URL:</label>
+                    <input type="url" id="targetUrl" name="targetUrl" required placeholder="https://example.com">
+                </div>
+
+                <div class="form-group">
+                    <div class="form-check">
+                        <input type="checkbox" id="useOrganicTraffic" name="useOrganicTraffic" class="checkbox" checked>
+                        <label for="useOrganicTraffic">Use Organic Traffic (via Google Search)</label>
+                    </div>
+                </div>
+
+                <div class="form-group" id="keywordsGroup">
+                    <label for="searchKeywords">Custom Search Keywords (optional):</label>
+                    <input type="text" id="searchKeywords" name="searchKeywords" placeholder="Leave empty for auto-generated keywords">
+                </div>
+
+                <div class="form-group">
+                    <label for="profiles">Number of Profiles:</label>
+                    <input type="number" id="profiles" name="profiles" min="1" max="10" value="1">
+                </div>
+
+                <div class="form-group">
+                    <label for="proxies">Proxies (one per line, format: ip:port:username:password OR ip:port):</label>
+                    <textarea id="proxies" name="proxies" rows="4" placeholder="192.168.1.1:8080:user:pass&#10;192.168.1.2:8080"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="deviceType">Device Type:</label>
+                    <select id="deviceType" name="deviceType">
+                        <option value="desktop">Desktop</option>
+                        <option value="mobile">Mobile</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-check">
+                        <input type="checkbox" id="autoLoop" name="autoLoop" class="checkbox">
+                        <label for="autoLoop">Enable Auto-Loop (restart session when finished)</label>
+                    </div>
+                </div>
+
+                <button type="submit">Start Session</button>
+            </form>
+
+            <div class="logs" id="logs"></div>
+        </div>
+
+        <div id="AutoLoop" class="tabcontent">
+            <h2>Auto-Loop Configuration</h2>
+            <form id="autoLoopForm">
+                <div class="form-group">
+                    <label for="loopTargetUrl">Target URL:</label>
+                    <input type="url" id="loopTargetUrl" name="targetUrl" required placeholder="https://example.com">
+                </div>
+
+                <div class="form-group">
+                    <div class="form-check">
+                        <input type="checkbox" id="loopUseOrganicTraffic" name="useOrganicTraffic" class="checkbox" checked>
+                        <label for="loopUseOrganicTraffic">Use Organic Traffic (via Google Search)</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="loopInterval">Interval (minutes):</label>
+                    <input type="number" id="loopInterval" name="interval" min="5" max="1440" value="30">
+                </div>
+
+                <div class="form-group">
+                    <label for="maxSessions">Max Concurrent Sessions:</label>
+                    <input type="number" id="maxSessions" name="maxSessions" min="1" max="50" value="10">
+                </div>
+
+                <button type="submit">Start Auto-Loop</button>
+                <button type="button" id="stopAutoLoop">Stop Auto-Loop</button>
+            </form>
+
+            <div id="autoLoopStatus" style="margin-top: 20px;"></div>
+        </div>
+
+        <div id="Monitoring" class="tabcontent">
+            <h2>Session Monitoring</h2>
+            <button id="refreshSessions">Refresh</button>
+            <div id="sessionsList" style="margin-top: 20px;"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+  </html>
